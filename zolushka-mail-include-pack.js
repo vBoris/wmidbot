@@ -171,8 +171,8 @@
 
 					if(runned)
 					{
-						page=parseInt(men.find("#ddlPages").val());
-						var pages=parseInt(men.find("#lblPageCount").text());
+						page=parseInt(men.find("#gvData_ddlPages").val());
+						var pages=parseInt(men.find("#gvData_lblPageCount").text());
 						if(page<pages)
 							top=setTimeout(function(){ Parse4Send(vs,vsid,++page,false); },ibp);
 						else
@@ -205,7 +205,7 @@
 			if(content)
 				Fcontent(content);
 			else
-				$.post(location.protocol+"//"+location.hostname+"/searches/search.aspx?searchtype="+storage.goal+"&vsid="+vsid,{__EVENTTARGET:"ddlPages",__VIEWSTATE:vs,ddlPages:page},Fcontent,"text");
+				$.post(location.protocol+"//"+location.hostname+"/searches/search.aspx?searchtype="+storage.goal+"&vsid="+vsid,{__EVENTTARGET:"ddlPages",__VIEWSTATE:vs,"gvData$ctl13$ddlPages":page},Fcontent,"text");
 		},
 		StartParser=function()
 		{
