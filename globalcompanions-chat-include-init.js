@@ -7,7 +7,7 @@
 				CB({
 					name:name,
 					runned:false,
-					storage:{}
+					storage:{  }
 				});
 			break;
 			default:
