@@ -19,11 +19,11 @@ function strt(request){
 			var postlist = [];
 			var obj = status_obj = request.object[0];
 			if(obj.speed==0){
-				var speed = 3000;
+				var speed = 4000;
 			}else if(obj.speed==1){
-				var speed = 1000;
+				var speed = 2000;
 			}else if(obj.speed==2){
-				var speed = 500;
+				var speed = 1500;
 			}
 			var online_l = JSON.parse(localStorage['online']);
 			if(obj.list==0){
