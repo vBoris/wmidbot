@@ -19,9 +19,9 @@ function strt(request){
 			if(obj.speed==0){
 				var speed = 3000;
 			}else if(obj.speed==1){
-				var speed = 2000;
+				var speed = 2500;
 			}else if(obj.speed==2){
-				var speed = 500;
+				var speed = 1500;
 			}
 			var online_l = JSON.parse(localStorage['online']);
 			if(obj.list==0){
