@@ -315,7 +315,7 @@
 			if(lastpage>0)
 			{
 				var href=location.href;
-				href=href.indexOf("off=")==-1 ? href+"&off="+lastpage : href.replace(/off=\d+/,"off="+lastpage);
+				href=href.indexOf("page=")==-1 ? href+"&page="+lastpage : href.replace(/page=\d+/,"page="+lastpage);
 				top=setTimeout(function(){
 					$.get(href,function(r){
 						Parse4Send(r,href,lastpage);
