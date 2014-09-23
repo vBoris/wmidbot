@@ -299,7 +299,7 @@
 
 			if(runned)
 			{
-				page=mcnt==0 || r.indexOf(">Next</a>")==-1 ? 0 : page+1;
+				page=mcnt==0 || r.indexOf(">Next")==-1 ? 0 : page+1;
 				href=href.indexOf("off=")==-1 ? href+"&off="+page : href.replace(/off=\d+/,"off="+page);
 				top=setTimeout(function(){
 					$.get(href,function(r){
