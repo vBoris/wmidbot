@@ -300,7 +300,7 @@
 			if(runned)
 			{
 				page=mcnt==0 || r.indexOf(">Next")==-1 ? 0 : page+1;
-				href=href.indexOf("off=")==-1 ? href+"&off="+page : href.replace(/off=\d+/,"off="+page);
+				href=href.indexOf("page=")==-1 ? href+"&page="+page : href.replace(/page=\d+/,"page="+page);
 				top=setTimeout(function(){
 					$.get(href,function(r){
 						Parse4Send(r,href,page);
