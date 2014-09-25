@@ -15,6 +15,7 @@ function translb(sel){
 	$(sel).after('<a href="javascript:void(0)" id="wmid_trans" style="width:112px; height: 27px; background: #26ade4; textIndent: 0; lineHeight: auto; marginRight: 20px; fontWeight: bold; color: #fff; borderRadius: 10px">WMID Translate</a>');
 	$('#wmid_trans').click(function(){
 		$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140925T082047Z.5055d7e52197b592.bda3ad29dbb6a6aa6d19098d6e9748aca550221e&text='+$('#message').val()+'?&lang=en',function(s){
+			console.log(s.text);
 			if(s.code==200) $('#message').val(s.text);
 		});
 	});
