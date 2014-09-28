@@ -221,13 +221,13 @@
 							dataType:"json",
 							success:function(pr)
 							{
-								if(pr.result=="error" && pr.msg.indexOf("The characters you entered")!=-1)
+								if(pr.result=="show_captcha"/* && pr.msg.indexOf("The characters you entered")!=-1*/)
 								{
 									captcha=true;
 									SendCaptcha(mess);
 								}
 								else
-									mess.F(pr.result!="error");
+									mess.F(pr.result!="show_captcha");
 							}
 						})
 						.fail(function(){ mess.F(false) })
