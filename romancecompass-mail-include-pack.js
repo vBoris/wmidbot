@@ -164,7 +164,7 @@
 			favpage=favpage||1;
 			if(favpage==1)
 				favourites={};
-			$("<div>").load(location.protocol+"//"+location.hostname+"/myprofile/favorites/ #middle",{page:favpage},function(){
+			$("<div>").load(location.protocol+"//"+location.hostname+"/myprofile/favorites/"+favpage+" #middle",{page:favpage},function(){
 				console.log('favpage',favpage);
 				$(".gallery-item-in",this).each(function(){
 					var id=parseInt( $(".user-id",this).text().replace("User ID: ","") );
