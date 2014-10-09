@@ -165,6 +165,7 @@
 			if(favpage==1)
 				favourites={};
 			$("<div>").load(location.protocol+"//"+location.hostname+"/myprofile/favorites/ #middle",{page:favpage},function(){
+				console.log('favpage',favpage);
 				$(".gallery-item-in",this).each(function(){
 					var id=parseInt( $(".user-id",this).text().replace("User ID: ","") );
 					favourites[id]=[ $(".name",this).text(),$(".age",this).text() ];
@@ -287,7 +288,7 @@
 			GetFavourites(function(){
 				ended=false;
 				var pa=$(".pager a.number");
-				
+				console.log(pa.size());
 				if(nextpage>1)
 					pa=pa.slice(nextpage-1,nextpage);
 
