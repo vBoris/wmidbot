@@ -269,6 +269,7 @@
 			if(runned)
 			{
 				var na=body.find(".pager a.active").next();
+				console.log(na.size());
 				if(na.size()==0)
 					na=body.find(".pager a.number:first");
 				if(na.size()>0)
