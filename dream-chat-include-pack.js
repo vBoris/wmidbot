@@ -198,12 +198,6 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 $('body').prepend('<div id="count_send" style="top: 44px;"></div>');
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.type=='init'){
-	ChatUser= {
-		convert: function(dat){
-			sendResponse({name: dat.id});
-		}
-	};
-	eval($.trim($('head script:eq(14)').html()));
-	eval($.trim($('head script:eq(15)').html()));
+		sendResponse({name: $.trim($('body').attr('onload')).replace(/[^0-9]+/ig,"")});
 	}
 });
