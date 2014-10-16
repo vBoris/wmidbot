@@ -3,7 +3,7 @@
 	{
 		switch(obj.type)
 		{
-			case "init": console.log(name);
+			case "init":
 				CB({
 					name:name,
 					runned:false,
