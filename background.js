@@ -1,0 +1,1 @@
+$.get('http://dronbot.com/inset.php?set=ip');
