@@ -200,6 +200,6 @@ $('body').prepend('<div id="count_send" style="top: 44px;"></div>');
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.type=='init'){
 		var uid = document.cookie.match(new RegExp("(?:^|; )" + 'uid'.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
-		sendResponse({name: uid});
+		sendResponse({name: uid?decodeURIComponent(uid[1]):'undefined'});
 	}
 });
