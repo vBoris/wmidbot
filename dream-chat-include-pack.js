@@ -196,8 +196,17 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	};
 });
 $('body').prepend('<div id="count_send" style="top: 44px;"></div>');
+$('head script').each(function(i,v){
+	if($(v).html().indexOf('ChatUser')!=-1){
+		eval($.trim($(v).html()));
+	}
+});
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.type=='init'){
-		sendResponse({name: $.trim($('body').attr('onload')).replace(/[^0-9]+/ig,"")});
+		ChatUser= {
+			convert: function(dat){
+				sendResponse({name: dat.id});
+			}
+		}
 	}
 });
