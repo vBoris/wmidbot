@@ -145,7 +145,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 							}
 						}
 					}
-					$('#count_send').text('РћС‚РѕСЃР»Р°РЅРѕ: '+nss+' РёР· '+obj.list.length+'');
+					$('#count_send').text('Отослано: '+nss+' из '+obj.list.length+'');
 					nss +=1;
 					status = 1;
 				}else{
@@ -197,7 +197,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 });
 $('body').prepend('<div id="count_send" style="top: 76px; font-size: 15px;"></div>');
 function translb(sel){
-	$(sel).after('<a href="javascript:void(0)" id="wmid_trans" style="width:112px; height: 30px; background: #26ade4; text-indent: 0; line-height: 30px; margin-right: 10px; margin-top: 1px; font-weight: bold; color: #fff; float:right;text-decoration: none;font-size: 12px;text-align: center;">WMID Translate</a><style>#buttons {width:250px;}</style>');
+	$(sel).after('<a href="javascript:void(0)" id="wmid_trans" style="width:112px; height: 30px; background: #26ade4; text-indent: 0; line-height: 30px; margin-right: 10px; margin-top: 1px; font-weight: bold; color: #fff; float:right;text-decoration: none;font-size: 12px;text-align: center;">WMID Translate</a><style>div.chatbody #buttons {width:250px;}</style>');
 	$('#wmid_trans').click(function(){
 		$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140925T082047Z.5055d7e52197b592.bda3ad29dbb6a6aa6d19098d6e9748aca550221e&text='+$('#message').val()+'&lang=en',function(s){
 			console.log(s.text);
