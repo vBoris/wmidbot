@@ -145,7 +145,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 							}
 						}
 					}
-					$('#count_send').text('Отослано: '+nss+' из '+obj.list.length+'');
+					$('#count_send').text('РћС‚РѕСЃР»Р°РЅРѕ: '+nss+' РёР· '+obj.list.length+'');
 					nss +=1;
 					status = 1;
 				}else{
