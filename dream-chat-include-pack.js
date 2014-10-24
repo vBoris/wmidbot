@@ -195,7 +195,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 		break;  
 	};
 });
-$('body').prepend('<div id="count_send" style="top: 44px;"></div>');
+$('body').prepend('<div id="count_send" style="top: 76px; font-size: 15px;"></div>');
 
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
 	if(request.type=='init'){
