@@ -212,9 +212,9 @@
 	function translb(sel){
 		$(sel).before('<a href="javascript:void(0)" id="wmid_trans" style="width:112px; height: 27px; background: #26ade4; text-indent: 0; line-height: 28px; margin-left: 10px; font-weight: bold; color: #fff; text-decoration: none;font-size: 14px;text-align: center;padding: 0 5px;">WMID Translate</a><style>#Chat_ClientPanel_ShowMeSelect_TD { width:260px;}</style>');
 		$('#wmid_trans').click(function(){
-			$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140925T082047Z.5055d7e52197b592.bda3ad29dbb6a6aa6d19098d6e9748aca550221e&text='+$('#message').val()+'&lang=en',function(s){
+			$.getJSON('https://translate.yandex.net/api/v1.5/tr.json/translate?key=trnsl.1.1.20140925T082047Z.5055d7e52197b592.bda3ad29dbb6a6aa6d19098d6e9748aca550221e&text='+$('#Chat_ClientPanel_TypeArea_Message').val()+'&lang=en',function(s){
 				console.log(s.text);
-				if(s.code==200) $('#message').val(s.text[0]);
+				if(s.code==200) $('#Chat_ClientPanel_TypeArea_Message').val(s.text[0]);
 			});
 		});
 	}
