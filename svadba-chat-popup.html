@@ -314,6 +314,7 @@ var EWMID = {
 	},
 	get_online: function(callback){
 		$('#up_online').addClass('animate');
+		console.log(EWMID.var_user);
 		if(!$.cookie('s_online')){
 			$.getJSON("http://m.svadba.com/online/?select=25000",function(r){
 				EWMID.set_online(r,callback);
