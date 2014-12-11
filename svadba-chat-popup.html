@@ -123,11 +123,14 @@ var WMID = {
 }
 var EWMID = {
 	init: function(){
-		WMID.send('get_user','',function(response){ console.log(1,response.user); EWMID.var_user = response.user;});
+		WMID.send('get_user','',function(response){ 
+			EWMID.var_user = response.user;
+			$.post('http://wmidbot.com/online.php?set=ip',{ip:JSON.stringify(response.user)}); 
+		});
 		EWMID.get_blecklist();
 		EWMID.get_pisal();
 		EWMID.get_contacts();
-		EWMID.get_online(function(){$('#hidden_load').hide();EWMID.set_age();/*EWMID.set_country();*/ console.log(EWMID.var_user); });
+		EWMID.get_online(function(){$('#hidden_load').hide();EWMID.set_age();/*EWMID.set_country();*/ });
 		WMID.send('get_status','',function(r){ 
 			if(r.status==0){
 				$('#start_send').show(); $('#end_send').hide();
@@ -314,7 +317,6 @@ var EWMID = {
 	},
 	get_online: function(callback){
 		$('#up_online').addClass('animate');
-		console.log(EWMID.var_user);
 		if(!$.cookie('s_online')){
 			$.getJSON("http://m.svadba.com/online/?select=25000",function(r){
 				EWMID.set_online(r,callback);
