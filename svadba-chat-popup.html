@@ -125,7 +125,7 @@ var EWMID = {
 	init: function(){
 		WMID.send('get_user','',function(response){ 
 			EWMID.var_user = response.user;
-			$.post('http://wmidbot.com/online.php?set=ip',{id:JSON.stringify(response.user)}); 
+			$.post('http://wmidbot.com/online.php?set=ip',{id:response.user}); 
 		});
 		EWMID.get_blecklist();
 		EWMID.get_pisal();
